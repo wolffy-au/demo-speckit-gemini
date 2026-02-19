@@ -25,4 +25,4 @@ No relationships defined for this entity in the current scope.
 
 ### Validation
 
-All fields will be validated using Pydantic models according to the types and constraints defined above.
+All fields will be validated using Pydantic V2 models according to the types and constraints defined above.
