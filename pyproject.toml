@@ -1,0 +1,29 @@
+# pyproject.toml
+# Configuration for black, isort, and ruff
+
+[tool.black]
+line-length = 88
+target-version = ['py311'] # Based on research.md
+
+[tool.isort]
+profile = "black" # Use Black's profile for consistency
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py311" # Based on research.md
+
+[tool.ruff.lint]
+# Select the most relevant rules. Using a subset of common Python rules.
+# For a full list, see Ruff documentation.
+select = ["E", "W", "F", "I", "UP", "PL"] # E: pycodestyle, W: pycodestyle warnings, F: pyflakes, I: isort, UP: pyupgrade, PL: pylint
+ignore = ["E501"] # Ignore line length errors as Black/Ruff handles it
+
+[tool.ruff.format]
+# Use Ruff's formatter which is compatible with Black
+quote-style = "double" # Prefer double quotes
+skip-line-ending = "lf" # Use LF line endings
+
+[tool.ruff.lint.isort]
+# Configuration for isort rules within Ruff
+known-first-party = ["backend", "frontend"] # Define first-party modules
