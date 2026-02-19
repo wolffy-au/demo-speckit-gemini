@@ -87,7 +87,7 @@ A user knows their loan amount, loan term, and desired monthly payment (P&I), an
 - **FR-005**: The system MUST accurately calculate the loan term in years based on the provided loan amount, annual interest rate, and desired P&I monthly payment.
 - **FR-006**: The system MUST accurately calculate the annual interest rate based on the provided loan amount, loan term, and desired P&I monthly payment.
 - **FR-007**: The system MUST validate user inputs to ensure they are numeric and within a reasonable range (e.g., positive values for amounts, rates, and terms).
-- **FR-008**: The system MUST display clear and actionable error messages for invalid inputs or impossible calculation scenarios.
+- **FR-008**: The system MUST display clear, specific, and actionable error messages indicating the field and reason for invalid inputs or impossible calculation scenarios.
 - **FR-009**: The system MUST display calculated results clearly, using appropriate formatting (e.g., currency, percentage).
 
 ### Key Entities *(include if feature involves data)*
@@ -118,10 +118,15 @@ A user knows their loan amount, loan term, and desired monthly payment (P&I), an
 
 ## Non-Functional Requirements (Implicit)
 
-- **Performance**: Calculations should be near-instantaneous for typical inputs.
+- **Performance**: Calculations must complete within 500ms for typical inputs.
 - **Usability**: The UI should be intuitive, form-based, and require minimal instruction. Advanced graphical elements are out of scope for this release.
 - **Accessibility**: The application should be accessible to users with common disabilities (e.g., screen reader compatibility).
+- **Security**: Primary focus on input validation; no sensitive data is stored and no external API communication requires special security measures beyond that.
 
 ## Clarifications
 ### 2026-02-20
 - Q: For the 'Mortgage Calculation Parameters', what are the specific data types and expected constraints for each field (Loan Amount, Annual Interest Rate, Loan Term, P&I Monthly Payment)? → A: Specify exact types (e.g., float for currency/rates, int for terms) and define explicit min/max ranges for each parameter in Pydantic models.
+- Q: What is the maximum acceptable latency (in milliseconds) for mortgage calculations with typical inputs to be considered "near-instantaneous"? → A: 500ms
+- Q: What is the primary security consideration for this application, given it handles financial data? → A: Focus on input validation only; no sensitive data is stored.
+- Q: What is the primary communication method (e.g., REST API endpoints, gRPC) and data format (e.g., JSON) expected between the Streamlit UI and the FastAPI backend? → A: REST API with JSON payload.
+- Q: For invalid inputs, should error messages be generic (e.g., "Invalid input") or specific (e.g., "Loan amount must be a positive number")? → A: Specific, indicating the field and reason.
