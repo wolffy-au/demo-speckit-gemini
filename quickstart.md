@@ -26,44 +26,30 @@ This guide provides instructions on how to set up and run the Mortgage Calculato
     ```
 
 3.  **Install backend dependencies**:
-    Navigate to the backend directory and install requirements.
     ```bash
-    cd backend
-    pip install -r requirements.txt # Assuming requirements.txt exists or will be created
+    pip install -r backend/requirements.txt
     ```
-    If `requirements.txt` is not yet generated, it should include:
-    ```
-    fastapi
-    uvicorn
-    pydantic
-    ```
+    (This assumes `requirements.txt` will be in the `backend/` directory and will include `fastapi`, `uvicorn`, `pydantic`.)
 
 4.  **Install frontend dependencies**:
-    Navigate to the frontend directory and install requirements.
     ```bash
-    cd ../frontend
-    pip install -r requirements.txt # Assuming requirements.txt exists or will be created
+    pip install -r frontend/requirements.txt
     ```
-    If `requirements.txt` is not yet generated, it should include:
-    ```
-    streamlit
-    ```
+    (This assumes `requirements.txt` will be in the `frontend/` directory and will include `streamlit`.)
 
 ## Running the Application
 
 1.  **Start the FastAPI backend**:
-    Ensure you are in the `backend` directory.
     ```bash
-    uvicorn src.api.main:app --reload
+    uvicorn backend.src.api.main:app --reload
     ```
-    (Note: Adjust `src.api.main:app` if your FastAPI app entry point is different.)
+    (Note: Adjust `backend.src.api.main:app` if your FastAPI app entry point is different.)
 
 2.  **Start the Streamlit frontend**:
-    Ensure you are in the `frontend` directory.
     ```bash
-    streamlit run src/pages/main.py # Assuming main.py is your entry point
+    streamlit run frontend/src/pages/main.py
     ```
-    (Note: Adjust `src/pages/main.py` if your Streamlit app entry point is different.)
+    (Note: Adjust `frontend/src/pages/main.py` if your Streamlit app entry point is different.)
 
 The application should now be accessible via your web browser, typically at `http://localhost:8501` for Streamlit and `http://localhost:8000` for FastAPI.
 
