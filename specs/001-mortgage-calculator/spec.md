@@ -97,6 +97,7 @@ A user knows their loan amount, loan term, and desired monthly payment (P&I), an
     - Annual Interest Rate
     - Loan Term (in years)
     - Principal & Interest (P&I) Monthly Payment
+**Data Modeling**: Pydantic library will be used for defining and validating data models.
 
 ## Success Criteria *(mandatory)*
 

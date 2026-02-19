@@ -17,16 +17,15 @@ This feature provides a simple, form-based web application that allows users to 
   the iteration process.
 -->
 
-**Language/Version**: Python 3.11  
-**Primary Dependencies**: FastAPI (backend API), Pydantic (data validation), Streamlit (UI framework), NumPy (for robust numerical calculations)  
-**Storage**: N/A (No persistent storage required for this calculator)  
-**Testing**: pytest (for backend API and calculation logic)  
-**Target Platform**: Web application  
-**Project Type**: Web application (frontend + backend)  
-**Performance Goals**: Calculations should be near-instantaneous (<1 second) for typical inputs.  
-**Constraints**: Calculations strictly for Principal & Interest (P&I) only. UI is form-based, excluding graphical elements for this release.  
+**Language/Version**: Python 3.11
+**Primary Dependencies**: FastAPI (backend API), Pydantic (data validation), Streamlit (UI framework). Focus on Streamlit's capabilities to leverage vanilla HTML, CSS, and JavaScript where possible, minimizing additional heavy frontend frameworks. NumPy (for robust numerical calculations)
+**Storage**: N/A (No persistent storage required for this calculator)
+**Testing**: pytest (for backend API and calculation logic)
+**Target Platform**: Web application
+**Project Type**: Web application (frontend + backend)
+**Performance Goals**: Calculations should be near-instantaneous (<1 second) for typical inputs.
+**Constraints**: Calculations strictly for Principal & Interest (P&I) only. UI is form-based, excluding graphical elements for this release. Prioritize minimal additional frontend libraries beyond Streamlit, utilizing vanilla HTML, CSS, and JavaScript where Streamlit allows customization.
 **Scale/Scope**: Assumed for small to moderate user load typical for a utility calculator.
-
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
