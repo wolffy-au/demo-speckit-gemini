@@ -1,50 +1,63 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+  Sync Impact Report:
+  - Version change: v1.0.0 → v1.0.1
+  - List of modified principles:
+    - II. Testing Standards (Refined wording)
+    - III. User Experience Consistency (Refined wording)
+  - Added sections: None
+  - Removed sections: None
+  - Templates requiring updates:
+    - .specify/templates/plan-template.md (✅ aligned)
+    - .specify/templates/spec-template.md (✅ aligned)
+    - .specify/templates/tasks-template.md (✅ aligned)
+  - Follow-up TODOs: None
+-->
+
+# SpecKit Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Code Quality (Excellence through Clarity)
+Logic must be self-documenting, modular, and adhere to SOLID principles. We prioritize readability over cleverness. Every function must have a clear purpose and minimal side effects.
+- **Rules**: No "magic numbers," use descriptive naming, keep functions under 30 lines where possible.
+- **Rationale**: Maintainability is the primary constraint for long-term project health.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Testing Standards (Verified Correctness)
+Automated tests are non-negotiable. Every feature must include unit and integration tests. Test coverage MUST prioritize critical paths and edge cases. We follow the Red-Green-Refactor cycle.
+- **Rules**: 100% coverage on core business logic; tests must be isolated and reproducible.
+- **Rationale**: Tests provide the confidence to refactor and ensure regressions are caught early.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. User Experience Consistency (Unified Interface)
+Interfaces MUST follow established patterns to ensure predictability. Whether CLI or GUI, the user's mental model MUST be respected. Error messages must be actionable and clear.
+- **Rules**: Use consistent command structures for CLI; provide helpful error messages with resolution steps.
+- **Rationale**: Consistency reduces cognitive load and improves user trust and efficiency.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Performance Requirements (Efficiency by Design)
+System responsiveness is a first-class citizen. Code must be optimized for resource efficiency. Any operation exceeding 200ms must be asynchronous or justified.
+- **Rules**: Profile critical paths; avoid premature optimization but maintain O(n) awareness.
+- **Rationale**: Performance is a feature; a slow system is a broken system for the user.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Development Workflow
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Our workflow is designed to ensure that every change is intentional and verified.
+1. **Specify**: Define requirements and user stories in a feature spec.
+2. **Plan**: Research technical approaches and map out tasks.
+3. **Implement**: Execute tasks following the Red-Green-Refactor cycle.
+4. **Verify**: Pass all quality gates before merging.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Quality Gates
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Before any feature is considered "Done," it must pass these gates:
+- **Linting & Formatting**: Must pass all project-standard style checks.
+- **Test Suite**: All new and existing tests must pass.
+- **Documentation**: READMEs, specs, and inline comments must be updated.
+- **Constitution Check**: Implementation must be reviewed against these core principles.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution is the supreme guide for SpecKit development.
+- **Amendments**: Proposed via PR; requires explanation of why the change improves project governance.
+- **Versioning**: Follows semantic versioning.
+- **Compliance**: All contributors must adhere to these principles; deviations must be justified in the `plan.md` complexity tracking section.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.1 | **Ratified**: 2026-02-18 | **Last Amended**: 2026-02-20
